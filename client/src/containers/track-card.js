@@ -2,16 +2,18 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { colors, mq } from '../styles';
 import { humanReadableTimeFromSeconds } from '../utils/helpers';
+import { Link } from "react-router-dom"
 
 /**
  * Track Card component renders basic info in a card format
  * for each track populating the tracks grid homepage.
  */
 const TrackCard = ({ track }) => {
-  const { title, thumbnail, author, length, modulesCount } = track;
+  const { title, thumbnail, author, length, modulesCount, id } = track;
 
   return (
-    <CardContainer>
+    <Link to={`/track/${id}`}>
+    <CardContainer >
       <CardContent>
         <CardImageContainer>
           <CardImage src={thumbnail} alt={title} />
@@ -31,6 +33,7 @@ const TrackCard = ({ track }) => {
         </CardBody>
       </CardContent>
     </CardContainer>
+    </Link>
   );
 };
 
