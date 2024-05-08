@@ -20,9 +20,9 @@ const typeDefs = gql`
         thumbnail: String
         length: Int
         modulesCount: Int
-        dscription: String
-        numberOfViews: Number
-        modules: [Module!]
+        description: String
+        numberOfViews: Int
+        module: [Module!]
 
     }
 
@@ -36,7 +36,6 @@ const typeDefs = gql`
         id: ID!
         title: String!
         length: Int
-    
     }
 
 `
