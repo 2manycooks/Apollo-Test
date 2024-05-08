@@ -26,7 +26,7 @@ const TrackDetail = ({ track }) => {
     author,
     length,
     modulesCount,
-    modules,
+    module,
     numberOfViews,
   } = track;
 
@@ -59,7 +59,7 @@ const TrackDetail = ({ track }) => {
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
           <div>
-            <StyledLink to={`./module/${modules[0]['id']}`}>
+            <StyledLink to={`./module/${module[0]['id']}`}>
               <Button
                 icon={<IconRun width="20px" />}
                 color={colors.pink.base}
@@ -74,7 +74,7 @@ const TrackDetail = ({ track }) => {
           <DetailItem>
             <h4>Modules</h4>
             <ul>
-              {modules.map((module) => (
+              {module.map((module) => (
                 <li key={module.title}>
                   <div>{module.title}</div>
                   <ModuleLength>
