@@ -9,7 +9,28 @@ const typeDefs = gql`
 
     "Index of all tracks"
     tracksForHome: [Track!]!
+        
+    }
 
+    type Mutation {
+        incrementTrackViews(id: ID!): IncrementTrackViewsResponse
+
+    
+    
+    }
+
+    type IncrementTrackViewsResponse {
+
+        "Similar to HTTP status code, represents status of mutation"
+        code: Int!
+        "Indicates if mutation was successful"
+        success: Boolean!
+        "Human-readable message for UI"
+        message: String!
+        "Newly updated track after successful mutation"
+        track: Track!
+    
+    
     }
 
     type Track {
