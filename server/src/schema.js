@@ -28,7 +28,7 @@ const typeDefs = gql`
         "Human-readable message for UI"
         message: String!
         "Newly updated track after successful mutation"
-        track: Track!
+        track: Track
     
     
     }
